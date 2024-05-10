@@ -1,0 +1,40 @@
+@import '../../styles/colors';
+@import '../../styles/font';
+
+.sign-up-container {
+    padding: 70px 0;
+
+    .continue-button {
+        margin: 17px 0 0;
+    }
+
+    .input-container {
+        input {
+            &:nth-of-type(2), &:last-child {
+                margin-top: 12px;
+            }
+        }
+    }
+    
+    .forgot-text {
+        @extend .poppins-regular;
+        font-size: 14px;
+        line-height: 21px;
+        width: 100%;
+        color: $text-primary;
+    }
+
+    .secondary-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            display: flex;
+        }
+
+        img {
+            margin-right: 10px;
+        }
+    }
+}

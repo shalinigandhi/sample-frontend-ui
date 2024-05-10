@@ -1,0 +1,30 @@
+@import '../../styles/colors';
+@import '../../styles/font';
+
+.login-container {
+    .sign-in-button {
+        margin: 27px 0 0;
+    }
+
+    .input-container {
+        input {
+            &:last-child {
+                margin: 12px 0;
+            }
+        }
+    }
+    
+    .forgot-text {
+        @extend .poppins-regular;
+        font-size: 14px;
+        line-height: 21px;
+        width: 100%;
+        color: $text-primary;
+    }
+
+    .secondary-button {
+        &:last-child {
+            margin-top: 10px;
+        }
+    }
+}
