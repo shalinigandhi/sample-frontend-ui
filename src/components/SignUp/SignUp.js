@@ -15,7 +15,7 @@ export const SignUp = () => {
             <input type="text" placeholder="Last Name" />
             <input type="email" placeholder="Email" />
         </div>
-        <a href="" className="primary-button continue-button">Continue</a>
+        <a href="/account-type" className="primary-button continue-button">Continue</a>
         <div className="separator"></div>
         <div className="buttons-container">
         <a href="" className="secondary-button">

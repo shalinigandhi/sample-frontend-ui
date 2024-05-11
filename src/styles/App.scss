@@ -74,3 +74,13 @@ button {
 .page-container {
   padding: 70px 0;
 }
+
+.input-container {
+  input {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

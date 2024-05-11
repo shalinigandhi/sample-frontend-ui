@@ -1,37 +1,31 @@
-import React from 'react';
-import brand from '../../assets/brand.svg'; 
-import editor from '../../assets/editor.svg'; 
+import React, {useState} from 'react';
+import { AccountSelection } from './AccountSelection';
+import { Editor } from './Editor';
+import { Brand } from './Brand';
 import './accountType.scss';
 
 export const AccountType = () => {
-  return (
-    <div className="page-container account-type-container">
-        <h1 className='heading'>Account Type</h1>
-        <div className="account-type-wrapper">
-            <label className="label-wrapper">
-                <input type="radio" name="account"/>
-                <span className="checkmark"></span>
-                <div className="highlight-box"></div>
-                <div className="type">
-                    <span className="type-img">
-                        <img src={ editor } alt="Editor"/>
-                    </span>  
-                    <span className="type-name">Editor</span>  
-                </div>
-              </label>
-              <label className="label-wrapper">
-                <input type="radio" name="account"/>
-                <span className="checkmark"></span>
-                <div className="highlight-box"></div>
-                <div className="type">
-                    <span className="type-img">
-                        <img src={ brand } alt="Brand"/>
-                    </span>  
-                    <span className="type-name">Brand</span>  
-                </div>
-            </label>
+    const [accountType, setAccountType] = useState('Editor');
+    const [selectedAccountType, setSelectedAccountType] = useState('');
+
+    const onChangeAccountType = (event, type) => {
+        if (event.target.checked) {
+            setAccountType(type);
+        }
+    }
+
+    const onContinue = (type) => {
+        setSelectedAccountType(type);
+    }
+    return (
+        <div className={"page-container " + (!selectedAccountType && 'account-type-container')}>
+            {!selectedAccountType && <AccountSelection
+                accountType={accountType}
+                onChangeAccountType={onChangeAccountType}
+                onContinue={onContinue}
+            />}
+            {selectedAccountType === "Editor" && <Editor />}
+            {selectedAccountType==="Brand" && <Brand/>}
         </div>
-        <a className='primary-button'>Continue</a>
-    </div>
-  )
+    )
 }

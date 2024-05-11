@@ -18,3 +18,7 @@ input {
         border-color: $main;
     }
 }
+
+input[type="checkbox"] {
+    width: initial;
+}
